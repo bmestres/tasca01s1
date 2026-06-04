@@ -8,8 +8,9 @@ public class Car {
     private final double power;
 
     // Constructor
-    public Car(String brand, String model, double power){
+    public Car(String model, double power){
         // Initialize attributes
+        Car.model = model;
         this.power = power;
     }
 
@@ -17,7 +18,7 @@ public class Car {
     public static void brake(){
         System.out.println("El vehicle està frenat");
     }
-
+    // Implement method accelerate
     public void accelerate(){
         System.out.println("El vehicle està accelerant");
     }
