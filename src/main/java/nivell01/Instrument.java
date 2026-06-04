@@ -7,6 +7,18 @@ public abstract class Instrument {
     private String name;
     private double price;
 
+    // Static block test
+    static{
+        System.out.println("Això és un bloc estàtic");
+    }
+
+    // Initialization block test
+
+    {
+        System.out.println("Es crea un nou objecte");
+    }
+
+
     // Constructor
     public Instrument(String name, double price){
         // Check input data
