@@ -1,5 +1,5 @@
 package nivell01;
-// Concrete class
+// Concrete subclass
 public class StringInstrument extends Instrument{
 
     // Constructor
@@ -13,5 +13,4 @@ public class StringInstrument extends Instrument{
     public void play(){
         System.out.println("Està sonant un instrument de corda");
     }
-
 }

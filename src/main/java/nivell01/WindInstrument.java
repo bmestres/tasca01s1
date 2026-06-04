@@ -1,5 +1,5 @@
 package nivell01;
-// Concrete class
+// Concrete subclass
 public class WindInstrument extends Instrument {
 
     // Constructor
