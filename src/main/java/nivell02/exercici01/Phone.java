@@ -39,4 +39,9 @@ public class Phone {
     public String getModel(){
         return this.model;
     }
+
+    // Implement call method
+    public void makeCall(){
+        System.out.println("Fent una trucada");
+    }
 }
