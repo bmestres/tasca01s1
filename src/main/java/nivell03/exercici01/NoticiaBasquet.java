@@ -1,29 +1,27 @@
 package nivell03.exercici01;
 
-public class NoticiaFutbol extends Noticia {
+public class NoticiaBasquet extends Noticia{
 
     // Define constants
-    private static final double preuBase = 300;
-    private static final int puntuacioBase = 5;
+    private static final double preuBase = 250;
+    private static final int puntuacioBase = 4;
 
     // Declare attributes
     private String competicio;
     private String club;
-    private String jugador;
 
     // Constructor
-    public NoticiaFutbol(String titular, String competicio, String club, String jugador) {
+    public NoticiaBasquet(String titular, String competicio, String club) {
 
         // Initialize superclass
         super(titular);
 
         // Check input data
-        checkInputs(competicio, club, jugador);
+        checkInputs(competicio, club);
 
         // Initialize attributes
         this.competicio = competicio;
         this.club = club;
-        this.jugador = jugador;
 
         // Set price and score by calling compute methods
         this.setPreu(this.computePrice());
@@ -31,16 +29,13 @@ public class NoticiaFutbol extends Noticia {
     }
 
     // Define checkInputs method
-    private void checkInputs(String competicio, String club, String jugador) {
+    private void checkInputs(String competicio, String club) {
 
         if (competicio == null) {
-            throw new IllegalArgumentException("Competicio must not be NULL");
+            throw new IllegalArgumentException("Competició must not be NULL");
         }
         if (club == null) {
             throw new IllegalArgumentException("Club must not be NULL");
-        }
-        if (jugador == null) {
-            throw new IllegalArgumentException("Jugador must not be NULL");
         }
     }
     // Define compute price method for NoticiaFutbol
@@ -49,18 +44,12 @@ public class NoticiaFutbol extends Noticia {
         // Initialize accumulator
         double totalPreu = this.preuBase;
 
-        // Update accumulator if club matches requirement
         if(this.club.equalsIgnoreCase("Barça") || this.club.equalsIgnoreCase("Madrid")){
-            totalPreu += 100;
+            totalPreu += 75;
         }
-        // Update accumulator if competition matches requirement
-        if(this.competicio.equalsIgnoreCase("Lliga de campions")){
-            totalPreu += 100;
-        }
-        // Update accumulator if player matches requirement
-        if(this.jugador.equalsIgnoreCase("Ferran Torres") ||
-                this.jugador.equalsIgnoreCase("Benzema")){
-            totalPreu += 50;
+
+        if(this.competicio.equalsIgnoreCase("Eurolliga")){
+            totalPreu += 75;
         }
         return totalPreu;
     }
@@ -72,9 +61,9 @@ public class NoticiaFutbol extends Noticia {
         int totalPuntuacio = puntuacioBase;
 
         // Update accumulator if competition matches requirement
-        if(this.competicio.equalsIgnoreCase("Lliga de campions")){
+        if(this.competicio.equalsIgnoreCase("Eurolliga")){
             totalPuntuacio += 3;
-        } else if (this.competicio.equalsIgnoreCase("Lliga")) {
+        } else if (this.competicio.equalsIgnoreCase("ACB")) {
             totalPuntuacio += 2;
         }
         // Update accumulator if club matches requirement
@@ -82,15 +71,8 @@ public class NoticiaFutbol extends Noticia {
                 || this.club.equalsIgnoreCase("Madrid")){
             totalPuntuacio += 1;
         }
-        // Update accumulator if player matches requirement
-        if(this.jugador.equalsIgnoreCase("Ferran Torres")
-                || this.jugador.equalsIgnoreCase("Benzema")){
-            totalPuntuacio += 1;
-        }
         return totalPuntuacio;
     }
 }
-
-
 
 
