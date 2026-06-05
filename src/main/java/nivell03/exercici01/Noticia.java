@@ -1,6 +1,6 @@
 package nivell03.exercici01;
 
-// Create abstract class Noticia
+// Define abstract class Noticia
 public abstract class Noticia {
 
     // Declare attributes

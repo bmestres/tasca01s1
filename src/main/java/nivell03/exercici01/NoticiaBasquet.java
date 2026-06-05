@@ -1,5 +1,6 @@
 package nivell03.exercici01;
 
+// Define subclass NoticiaBasquet
 public class NoticiaBasquet extends Noticia{
 
     // Define constants

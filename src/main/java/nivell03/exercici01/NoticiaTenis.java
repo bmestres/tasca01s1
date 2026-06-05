@@ -2,6 +2,7 @@ package nivell03.exercici01;
 
 import java.util.ArrayList;
 
+//
 public class NoticiaTenis extends Noticia{
 
     // Define constants
@@ -69,7 +70,6 @@ public class NoticiaTenis extends Noticia{
         }
         return totalPreu;
     }
-
     // Define compute score method for NoticiaFutbol
     @Override
     public int computeScore(){
