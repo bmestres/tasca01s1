@@ -93,6 +93,6 @@ public class Redactor {
 
     @Override
     public String toString(){
-        return String.format("Nom: %s\nNIF: %s\n");
+        return String.format("Nom: %s\nNIF: %s\n", this.nom, this.nif);
     }
 }
