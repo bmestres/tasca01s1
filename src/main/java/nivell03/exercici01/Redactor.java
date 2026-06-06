@@ -43,9 +43,56 @@ public class Redactor {
         this.noticies.add(noticia);
     }
 
+    // Return position of a news piece given its header. Return -1 if not found
+    public int findNewsByHeader(String titular){
+
+        // Declare variables
+        boolean found;
+        int i, pos;
+
+        // Initialize variables
+        i = 0;
+        pos = -1;
+        found = false;
+
+        while(i < this.noticies.size() && !found){
+            if(titular.equalsIgnoreCase(this.noticies.get(i).getTitular())){
+                pos = i;
+                found = true;
+            }
+            i++;
+        }
+        return pos;
+    }
+
+    public Noticia getNewsByHeader(String titular){
+        int pos = this.findNewsByHeader(titular);
+        Noticia noticia = null;
+        if(pos >= 0){
+            noticia = this.noticies.get(pos);
+        }
+        return noticia;
+    }
+
+    public void deleteNewsPiece(String titular){
+
+        int pos = this.findNewsByHeader(titular);
+        if(pos == -1){
+            System.out.println("=== Notícia no trobada ===");
+        } else {
+            this.noticies.remove(pos);
+            System.out.println("=== Notícia eliminada amb exit ===");
+        }
+    }
+    // Show all editor's news pieces on screen
+    public void showAllNews(){
+        for(int i = 0; i < this.noticies.size(); i++){
+            System.out.printf("%s", this.noticies.get(i).toString());
+        }
+    }
+
     @Override
     public String toString(){
         return String.format("Nom: %s\nNIF: %s\n");
     }
-
 }

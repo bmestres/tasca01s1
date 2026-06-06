@@ -37,6 +37,7 @@ public class Redaccio {
                 pos = i;
                 found = true;
             }
+            i++;
         }
         return pos;
     }
@@ -44,5 +45,23 @@ public class Redaccio {
     // Remove editor with matching nif
     public void removeEditor(String nif){
         this.redactors.remove(findEditorByNif(nif));
+    }
+
+    // Get news piece by header
+    public Noticia getNewsByHeader(String titular){
+        boolean found = false;
+        int i = 0;
+        Noticia foundNewsPiece = null;
+
+        while(i < this.redactors.size() && !found){
+            int pos = this.redactors.get(i).findNewsByHeader(titular);
+
+            if(pos >= 0){
+                foundNewsPiece = this.redactors.get(i).getNewsByHeader(titular);
+                found = true;
+            }
+            i++;
+        }
+        return foundNewsPiece;
     }
 }

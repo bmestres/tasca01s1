@@ -1,6 +1,6 @@
 package nivell03.exercici01;
 // Create news type enumerative
-public enum tipusNoticia {
+public enum TipusNoticia {
     NOTICIA_FUTBOL,
     NOTICIA_BASQUET,
     NOTICIA_TENIS,
