@@ -25,4 +25,27 @@ public class Redactor {
         if(nom == null)throw new IllegalArgumentException("Name must not be NULL");
         if(nif == null)throw new IllegalArgumentException("NIF must not be NULL");
     }
+
+    // Getters
+    public String getNif(){
+        return this.nif;
+    }
+    public String getName(){
+        return this.nom;
+    }
+    // Setters
+    public void setNif(String nom){
+        this.nom = nom;
+    }
+
+    // Add news piece
+    public void addNewsPiece(Noticia noticia){
+        this.noticies.add(noticia);
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Nom: %s\nNIF: %s\n");
+    }
+
 }
