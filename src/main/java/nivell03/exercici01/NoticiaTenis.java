@@ -88,4 +88,13 @@ public class NoticiaTenis extends Noticia{
         }
         return totalPuntuacio;
     }
+    // Format Tennis news info to String
+    @Override
+    public String toString(){
+        // CSV format players to String
+        String formatedTennists = String.join(", ", this.tenistes);
+
+        return String.format("Titular: %s\nCompetició: %s\nTenistes: %s\nPuntuació: %f.1\nPreu: %d\nText: %s\n",
+                this.getTitular(), this.competicio, formatedTennists, this.getPuntuacio(), this.getPreu(), this.getText());
+    }
 }

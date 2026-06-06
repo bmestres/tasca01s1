@@ -84,6 +84,12 @@ public class NoticiaFutbol extends Noticia {
         }
         return totalPuntuacio;
     }
+    // Format Football news info to string
+    @Override
+    public String toString(){
+        return String.format("Titular: %s\nCompetició: %s\nClub: %s\nJugador: %s\nPuntuació: %f.1\nPreu: %d\nText: %s\n",
+                this.getTitular(), this.competicio, this.club, this.jugador, this.getPuntuacio(), this.getPreu(), this.getText());
+    }
 }
 
 
