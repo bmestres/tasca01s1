@@ -16,6 +16,7 @@ public class Main {
 
         do {
             userMenu.displayMenu();
+            System.out.println(" -> La teva opció: ");
             userChoice = input.nextInt();
             input.nextLine();
 

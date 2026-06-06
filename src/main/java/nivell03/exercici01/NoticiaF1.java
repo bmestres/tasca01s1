@@ -55,7 +55,7 @@ public class NoticiaF1 extends Noticia {
     // Format F1 news info to string
     @Override
     public String toString(){
-        return String.format("Titular: %s\nEscuderia: %s\nPuntuació: %f.1\nPreu: %d\nText: %s\n",
+        return String.format("Titular: %s\nEscuderia: %s\nPuntuació: %d\nPreu: %f.1\nText: %s\n",
                 this.getTitular(), this.escuderia, this.getPuntuacio(), this.getPreu(), this.getText());
     }
 }

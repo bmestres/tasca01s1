@@ -72,7 +72,7 @@ public class NoticiaBasquet extends Noticia{
     // Format Basket news info to string
     @Override
     public String toString(){
-        return String.format("Titular: %s\nCompetició: %s\nClub: %s\nPuntuació: %f.1\nPreu: %d\nText: %s\n",
+        return String.format("Titular: %s\nCompetició: %s\nClub: %s\nPuntuació: %d\nPreu: %f.1\nText: %s\n",
                 this.getTitular(), this.competicio, this.club, this.getPuntuacio(), this.getPreu(), this.getText());
     }
 }

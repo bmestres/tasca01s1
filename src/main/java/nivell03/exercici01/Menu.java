@@ -12,6 +12,7 @@ public class Menu {
         System.out.println("*           5) Mostrar totes les noticies d'un redactor    *");
         System.out.println("*           6) Calcular la puntuació d'una notícia         *");
         System.out.println("*           7) Calcular el preu d'una notícia              *");
+        System.out.println("*           8) SORTIR                                      *");
         System.out.println("*==========================================================*");
     }
 }

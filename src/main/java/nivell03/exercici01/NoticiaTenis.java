@@ -94,7 +94,7 @@ public class NoticiaTenis extends Noticia{
         // CSV format players to String
         String formatedTennists = String.join(", ", this.tenistes);
 
-        return String.format("Titular: %s\nCompetició: %s\nTenistes: %s\nPuntuació: %f.1\nPreu: %d\nText: %s\n",
+        return String.format("Titular: %s\nCompetició: %s\nTenistes: %s\nPuntuació: %d\nPreu: %f.1\nText: %s\n",
                 this.getTitular(), this.competicio, formatedTennists, this.getPuntuacio(), this.getPreu(), this.getText());
     }
 }
