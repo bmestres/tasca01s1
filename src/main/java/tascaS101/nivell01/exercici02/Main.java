@@ -1,6 +1,6 @@
-package nivell01.exercici02;
+package tascaS101.nivell01.exercici02;
 
-import static nivell01.exercici02.Car.brake;
+import static tascaS101.nivell01.exercici02.Car.brake;
 
 public class Main {
 

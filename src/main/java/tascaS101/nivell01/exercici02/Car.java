@@ -1,4 +1,4 @@
-package nivell01.exercici02;
+package tascaS101.nivell01.exercici02;
 
 public class Car {
 

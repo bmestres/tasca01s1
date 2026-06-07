@@ -1,4 +1,4 @@
-package nivell03.exercici01;
+package tascaS101.nivell03.exercici01;
 
 import java.util.ArrayList;
 // Create Redactor class
@@ -85,6 +85,7 @@ public class Redactor {
     public void showAllNews(){
         for(int i = 0; i < this.noticies.size(); i++){
             System.out.printf("%s", this.noticies.get(i).toString());
+            System.out.println();
         }
     }
     @Override

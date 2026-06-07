@@ -1,4 +1,4 @@
-package nivell01.exercici01;
+package tascaS101.nivell01.exercici01;
 
 // Abstract class
 public abstract class Instrument {

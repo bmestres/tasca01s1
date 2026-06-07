@@ -1,4 +1,4 @@
-package nivell02.exercici01;
+package tascaS101.nivell02.exercici01;
 // Create superclass Phone
 public class Phone {
     // Define attributes

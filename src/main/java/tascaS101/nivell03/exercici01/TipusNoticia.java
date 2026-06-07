@@ -1,4 +1,4 @@
-package nivell03.exercici01;
+package tascaS101.nivell03.exercici01;
 // Create news type enumerative
 public enum TipusNoticia {
     NOTICIA_FUTBOL,

@@ -1,4 +1,4 @@
-package nivell03.exercici01;
+package tascaS101.nivell03.exercici01;
 
 public class Menu {
     // Show option menu on screen

@@ -1,4 +1,4 @@
-package nivell03.exercici01;
+package tascaS101.nivell03.exercici01;
 
 // Define subclass Noticia F1
 public class NoticiaF1 extends Noticia {

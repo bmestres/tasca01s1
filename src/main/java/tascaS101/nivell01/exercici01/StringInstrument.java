@@ -1,4 +1,4 @@
-package nivell01.exercici01;
+package tascaS101.nivell01.exercici01;
 // Concrete subclass
 public class StringInstrument extends Instrument{
 
