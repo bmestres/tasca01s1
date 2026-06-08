@@ -314,7 +314,7 @@ public class Main {
                         System.out.println("=== Notícia no trobada ===");
                     } else {
                         // Show new's price on screen
-                        System.out.printf("Preu: %d\n", noticia.computePrice());
+                        System.out.printf("Preu: %.2f\n", noticia.computePrice());
                     }
                     break;
                 }
