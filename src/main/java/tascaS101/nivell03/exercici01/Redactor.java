@@ -33,10 +33,6 @@ public class Redactor {
     public String getName(){
         return this.nom;
     }
-    // Setters
-    public void setNif(String nom){
-        this.nom = nom;
-    }
 
     // Add news piece
     public void addNewsPiece(Noticia noticia){
