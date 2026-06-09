@@ -3,7 +3,7 @@ package tascaS101.nivell01.exercici02;
 public class Car {
 
     // Declare attributes
-    private static final String brand = "Volvo";
+    private static final String BRAND = "Volvo";
     private static String model;
     private final double power;
 
@@ -25,7 +25,7 @@ public class Car {
 
     public void print(){
         System.out.println("Car attributes:");
-        System.out.printf("Brand: %s\n",Car.brand);
+        System.out.printf("Brand: %s\n",Car.BRAND);
         System.out.printf("Model: %s\n", Car.model);
         System.out.printf("Power: %.1f\n", this.power);
     }
