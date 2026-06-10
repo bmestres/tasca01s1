@@ -2,8 +2,8 @@ package tascaS102.nivell01;
 
 public class Product {
     // Attributes
-    String name;
-    double price;
+    private String name;
+    private double price;
 
     public Product(String name, double price){
         checkInputs(name, price);
