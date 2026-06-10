@@ -6,7 +6,6 @@ public class Main {
 
         // Forcing a custom Empty Sale Exception
         TestEmptySell.performTest();
-
         // Forcing an out-of-bounds exception
        TestOutOfBounds.performTest();
     }
