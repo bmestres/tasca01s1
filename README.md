@@ -47,7 +47,6 @@ There a different types of *Noticia*, each of which have its own particular attr
 **Technologies**:
 **Backend** Java
 
-**Instal·lació i Execució**
 **Instalation and Execution**
 
 1. Clone repository: https://github.com/bmestres/tasca01s1.git
@@ -62,6 +61,14 @@ There a different types of *Noticia*, each of which have its own particular attr
 
 **Level 3**
 - <ins>exercici01</ins>: src/main/java/nivell03/exercici01/Main.java
+
+# Assignment S102
+
+## Level 1
+
+# Exercice 1 - Personalized exceptions and error handling
+
+
 
 
 

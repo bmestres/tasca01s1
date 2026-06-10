@@ -3,7 +3,7 @@ package tascaS102.nivell01;
 import java.util.ArrayList;
 
 public class TestOutOfBounds {
-    // Tries accessing an out-of-bounds element
+    // Tries accessing an out-of-bounds element then catches exception with a predefined message
     public static void performTest(){
         int array[] = {0, 1, 2, 3, 4};
 
