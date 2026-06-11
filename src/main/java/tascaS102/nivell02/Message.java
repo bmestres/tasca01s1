@@ -20,8 +20,8 @@ public class Message {
     // Result messages
     public static final String RESULT_BYTE = "Entered %d\n";
     public static final String RESULT_INT = "Entered %d\n";
-    public static final String RESULT_FLOAT = "Entered %.1f\n";
-    public static final String RESULT_DOUBLE = "Entered %f\n";
+    public static final String RESULT_FLOAT = "Entered %.2f\n";
+    public static final String RESULT_DOUBLE = "Entered %2f\n";
     public static final String RESULT_CHARACTER = "Entered %c\n";
     public static final String RESULT_STRING = "Entered %s\n";
     public static final String RESULT_BOOLEAN = "Entered %b\n";
