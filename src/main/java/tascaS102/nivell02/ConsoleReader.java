@@ -3,7 +3,7 @@ package tascaS102.nivell02;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// Prompt user and check input. Show an error message until the input is correct
+// Prompt user and check input. Show an error message until the input is correct, then stores input.
 public class ConsoleReader {
 
     private static Scanner inputScanner = new Scanner(System.in);
@@ -16,10 +16,9 @@ public class ConsoleReader {
 
         do {
         System.out.println(Message.ENTER_BYTE);
-        String userInput = inputScanner.nextLine();
 
         try {
-            formatedByte = Byte.parseByte(userInput);
+            formatedByte = inputScanner.nextByte();
             inputScanner.nextLine();
             correctInput = true;
 
@@ -38,10 +37,9 @@ public class ConsoleReader {
 
         do{
             System.out.println(Message.ENTER_INT);
-            String userInput = inputScanner.nextLine();
 
             try {
-                formatedInt = Integer.parseInt(userInput);
+                formatedInt = inputScanner.nextInt();
                 inputScanner.nextLine();
                 correctInput = true;
 
@@ -60,18 +58,19 @@ public class ConsoleReader {
             float formatedFloat = 0;
             boolean correctInput = false;
 
-        System.out.println(Message.ENTER_FLOAT);
-        String userInput = inputScanner.nextLine();
+            do{
+                System.out.println(Message.ENTER_FLOAT);
 
-        try {
-            formatedFloat = Float.parseFloat(userInput);
-            inputScanner.nextLine();
-            correctInput = true;
+                try {
+                    formatedFloat = inputScanner.nextFloat();
+                    inputScanner.nextLine();
+                    correctInput = true;
 
-        } catch (InputMismatchException e) {
-            System.out.println(e.getMessage());
-            inputScanner.nextLine();
-        } while (!correctInput);
+                } catch (InputMismatchException e) {
+                    System.out.println(e.getMessage());
+                    inputScanner.nextLine();
+                }
+            }while (!correctInput);
 
         return formatedFloat;
     }
@@ -83,10 +82,9 @@ public class ConsoleReader {
 
         do{
             System.out.println(Message.ENTER_DOUBLE);
-            String userInput = inputScanner.nextLine();
 
             try{
-                formatedDouble = Double.parseDouble(userInput);
+                formatedDouble = inputScanner.nextDouble();
                 inputScanner.nextLine();
                 correctInput = true;
 
@@ -109,7 +107,7 @@ public class ConsoleReader {
             String userInput = inputScanner.nextLine();
 
             try {
-                if (userInput.length() > 1) {
+                if (userInput.length() != 1) {
                     throw new MultipleCharacterException();
                 }
                 formatedChar = userInput.charAt(0);
@@ -129,9 +127,9 @@ public class ConsoleReader {
 
         do{
             System.out.println(Message.ENTER_STRING);
-            String userInput = inputScanner.nextLine();
 
             try{
+                String userInput = inputScanner.nextLine();
                 if(userInput.length() < 3){
                     throw new ShortStringException();
                 }
@@ -144,7 +142,7 @@ public class ConsoleReader {
         }while(!correctInput);
     return formatedString;
     }
-
+    // Prompts user for a boolean and returns value
     public static boolean readYesNo(String message){
         boolean formatedBool = false;
         boolean correctInput = false;
@@ -154,10 +152,13 @@ public class ConsoleReader {
             String userInput = inputScanner.nextLine();
 
             try{
-                if(userInput != "y" || userInput != "n"){
+                if(!userInput.equals("y") && !userInput.equals("n")){
                     throw new YesNoException();
                 }
-                formatedBool = Boolean.parseBoolean(userInput);
+
+                if(userInput.equals("y")){
+                    formatedBool = true;
+                }
                 correctInput = true;
 
             }catch(YesNoException e) {
