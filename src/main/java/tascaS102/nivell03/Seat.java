@@ -57,8 +57,7 @@ public class Seat {
     // Shows seat's information
     @Override
     public String toString() {
-        String.format("Row: %d\nSeat: %d\nPerson: %s\n", this.row, this.seatNum, personName);
-        return super.toString();
+        return String.format("Row: %d\nSeat: %d\nPerson: %s\n", this.row, this.seatNum, personName);
     }
 
     @Override
