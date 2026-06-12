@@ -66,6 +66,10 @@ public class ReservationService {
 
     // Return list with all sits
     public List<Seat> getAllSeats() {
+
+        if(this.theaterSeats.isEmpty()){
+            throw new EmptySeatListException();
+        }
         return this.theaterSeats;
     }
 

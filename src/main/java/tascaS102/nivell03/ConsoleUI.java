@@ -1,6 +1,8 @@
 package tascaS102.nivell03;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI {
@@ -12,18 +14,6 @@ public class ConsoleUI {
     // Constructor
     public ConsoleUI(ReservationService service){
         this.service = service;
-    }
-    // Read integer
-    private int readInt(String message){
-        int formatedInt = 0;
-        try{
-            formatedInt = scannerInput.nextInt();
-            scannerInput.nextLine();
-
-        }catch(InputMismatchException e){
-            System.out.println(e.getMessage());
-        }
-        return formatedInt;
     }
 
     public void start(){
@@ -73,7 +63,7 @@ public class ConsoleUI {
 
     // Display data methods
     private void showBookedSits(){
-        // System.out.println(service.)
+        List<Seat>bookedSits = service.getAllSeats();
 
     }
 
