@@ -78,6 +78,7 @@ public class ConsoleUI {
         try {
             List<Seat>sits = service.getSeatsByPerson(person);
 
+            System.out.println(Message.U_PERSON_SEATS);
             for(int i = 0; i < sits.size(); i++){
                 System.out.printf("%d)\n%s\n",i + 1, sits.get(i));
             }

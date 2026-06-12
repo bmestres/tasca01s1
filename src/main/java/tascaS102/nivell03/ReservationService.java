@@ -6,15 +6,15 @@ import java.util.List;
 public class ReservationService {
 
     // Attributes
-    private int rows;
-    private int sitsPerRaw;
-    private ArrayList<Seat> theaterSeats;
+    private final int rows;
+    private final int sitsPerRaw;
+    private final ArrayList<Seat> theaterSeats;
 
     // Reservation service constructor
     public ReservationService(int rows, int columns) {
         this.rows = rows;
         this.sitsPerRaw = columns;
-        this.theaterSeats = new ArrayList<Seat>();
+        this.theaterSeats = new ArrayList<>();
     }
 
     // Reserve a new seat
@@ -75,7 +75,7 @@ public class ReservationService {
 
     // Return list with all seats booked by a given person
     public List<Seat> getSeatsByPerson(String name) {
-        ArrayList<Seat> seatsByPerson = new ArrayList<Seat>();
+        ArrayList<Seat> seatsByPerson = new ArrayList<>();
 
         for (int i = 0; i < this.theaterSeats.size(); i++) {
             Seat currSeat = this.theaterSeats.get(i);
@@ -98,14 +98,10 @@ public class ReservationService {
 
     private void validateSeatAvailability(int row, int seat) {
         Seat targetSeat = new Seat(row, seat, "");
-        boolean found = false;
         int i = 0;
 
-        while(!found && i < this.theaterSeats.size()){
+        while(i < this.theaterSeats.size()){
             if(theaterSeats.get(i).equals(targetSeat)){
-                found = true;
-            }
-            if(found){
                 throw new SeatAlreadyTakenException();
             }
             i++;

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 // Ensure correct format inout
 public class ConsoleReader {
-    private static Scanner inputScanner = new Scanner(System.in);
+    private static final Scanner inputScanner = new Scanner(System.in);
 
     // Prompt user for integer value and return value if format is correct
     public static int readInt(String message) {

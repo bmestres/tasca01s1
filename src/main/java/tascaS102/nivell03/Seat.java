@@ -5,9 +5,9 @@ import java.util.Objects;
 public class Seat {
 
     // Sit attributes
-    private int row;
-    private int seatNum;
-    private String personName;
+    private final int row;
+    private final int seatNum;
+    private final String personName;
 
     // Constructor
     public Seat(int row, int seat, String personName){
@@ -17,29 +17,8 @@ public class Seat {
     }
 
     // Getters
-    public int getRow(){
-        return this.row;
-    }
-
-    public int getSeatNum(){
-        return this.seatNum;
-    }
-
     public String getPersonName(){
         return this.personName;
-    }
-
-    // Setters
-    public void setRow(int row){
-        this.row = row;
-    }
-
-    public void setSeatNum(int seatNum){
-        this.seatNum = seatNum;
-    }
-
-    public void setPersonName(String personName){
-        this.personName = personName;
     }
 
     @Override

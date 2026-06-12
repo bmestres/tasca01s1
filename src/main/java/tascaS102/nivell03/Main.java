@@ -2,7 +2,7 @@ package tascaS102.nivell03;
 
 public class Main {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         System.out.println(Message.U_WELCOME);
         int numRows = ConsoleReader.readInt(Message.U_ENTER_ROWS);
