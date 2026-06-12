@@ -1,14 +1,11 @@
 package tascaS102.nivell03;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public class ConsoleUI {
 
     // Attributes
-    private ReservationService service;
+    private final ReservationService service;
 
     // Constructor
     public ConsoleUI(ReservationService service) {
@@ -43,7 +40,6 @@ public class ConsoleUI {
                     }
                     case M_CANCEL_BOOKING: {
                         promptCancelSeat();
-
                         break;
                     }
                     case M_CANCEL_ALL_USER_BOOKING: {
@@ -78,7 +74,6 @@ public class ConsoleUI {
     }
 
     private void showSeatsPerPerson() {
-
         String person = ConsoleReader.readString(Message.U_ENTER_PERSON);
         try {
             List<Seat>sits = service.getSeatsByPerson(person);
@@ -93,7 +88,6 @@ public class ConsoleUI {
     }
 
     private void promptReserveSeat() {
-
         int row = ConsoleReader.readInt(Message.U_ENTER_ROW);
         int col = ConsoleReader.readInt(Message.U_ENTER_SEAT_NUMBER);
         String person = ConsoleReader.readString(Message.U_ENTER_PERSON);
@@ -107,14 +101,13 @@ public class ConsoleUI {
     }
 
     private void promptCancelSeat() {
-
         int row = ConsoleReader.readInt(Message.U_ENTER_ROW);
         int col = ConsoleReader.readInt(Message.U_ENTER_SEAT_NUMBER);
 
         try {
             service.cancelSit(row, col);
             System.out.println(Message.E_SUCCESS);
-        } catch (SeatAlreadyEmptyException e) {
+        } catch (InvalidSeatPositionException | SeatAlreadyEmptyException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -125,7 +118,7 @@ public class ConsoleUI {
         try {
             service.cancelAllByPerson(person);
             System.out.println(Message.E_SUCCESS);
-        } catch (SeatAlreadyEmptyException e) {
+        } catch (PersonNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
