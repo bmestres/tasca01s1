@@ -25,4 +25,5 @@ public class Message {
     public static final String E_OUT_OF_RANGE_VALUE = "Out of range value";
     public static final String E_INVALID_SIT_POSITION = "Invalid seat position";
     public static final String E_STRING_WITH_NUMBERS = "Text must not include numbers";
+    public static final String E_SEAT_ALREADY_TAKEN = "Sit already taken";
 }

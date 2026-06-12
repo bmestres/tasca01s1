@@ -1,13 +1,14 @@
 package tascaS102.nivell03;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReservationService {
 
     // Attributes
     private int rows;
     private int sitsPerRaw;
-    ArrayList<Seat>theaterSits;
+    List<Seat> theaterSits;
 
     // Reservation service constructor
     public ReservationService(int rows, int columns){
@@ -25,7 +26,21 @@ public class ReservationService {
     }
 
     public void cancelSit(int row, int seat){
-        this.theaterSits
+        int i = 0;
+        boolean deleted = false;
+
+        Seat targetSeat = new Seat(row, seat, "");
+
+        while(!deleted && i < this.theaterSits.size()){
+            if(this.theaterSits.get(i).equals(targetSeat)){
+                this.theaterSits.remove(i);
+                deleted = true;
+            }
+            i++;
+        }
+        if(!deleted){
+            throw new SeatAlreadyEmptyException();
+        }
     }
 
 

@@ -1,5 +1,7 @@
 package tascaS102.nivell03;
 
+import java.util.Objects;
+
 public class Seat {
 
     // Sit attributes
@@ -16,24 +18,25 @@ public class Seat {
 
     @Override
     public boolean equals(Object o) {
-
         if (o == this){
             return true;
         }
-
         if(!(o instanceof Seat)){
             return false;
         }
-
         Seat seat = (Seat) o;
-
         return this.row == seat.row && this.seatNum == seat.seatNum;
     }
 
     // Shows seat's information
     @Override
     public String toString() {
-        String.format("Row: %d\nSeat: %d\nPerson: %s\n", row, seat, personName);
+        String.format("Row: %d\nSeat: %d\nPerson: %s\n", this.row, this.seatNum, personName);
         return super.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(row, seatNum);
     }
 }
