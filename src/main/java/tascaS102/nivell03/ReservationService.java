@@ -8,13 +8,13 @@ public class ReservationService {
     // Attributes
     private int rows;
     private int sitsPerRaw;
-    ArrayList<Seat> theaterSits;
+    ArrayList<Seat> theaterSeats;
 
     // Reservation service constructor
     public ReservationService(int rows, int columns){
         this.rows = rows;
         this.sitsPerRaw = columns;
-        this.theaterSits = new ArrayList<Seat>();
+        this.theaterSeats = new ArrayList<Seat>();
     }
 
 
@@ -23,7 +23,7 @@ public class ReservationService {
             validateSeatPosition(row, seat);
 
             Seat newSeat = new Seat(row, seat, name);
-            this.theaterSits.add(newSeat);
+            this.theaterSeats.add(newSeat);
     }
     // Removes reservation given row and seat number
     public void cancelSit(int row, int seat){
@@ -32,9 +32,9 @@ public class ReservationService {
 
         Seat targetSeat = new Seat(row, seat, "");
 
-        while(!deleted && i < this.theaterSits.size()){
-            if(this.theaterSits.get(i).equals(targetSeat)){
-                this.theaterSits.remove(i);
+        while(!deleted && i < this.theaterSeats.size()){
+            if(this.theaterSeats.get(i).equals(targetSeat)){
+                this.theaterSeats.remove(i);
                 deleted = true;
             }
             i++;
@@ -46,20 +46,35 @@ public class ReservationService {
     // Cancel all person's reservations given its name
     public void cancelAllByPerson(String name){
 
-        int initialSize = this.theaterSits.size();
+        int initialSize = this.theaterSeats.size();
 
         for(int i = initialSize - 1 ; i <= 0; i--){
-            if(this.theaterSits.get(i).getPersonName().equals(name)){
-                this.theaterSits.remove(i);
+            if(this.theaterSeats.get(i).getPersonName().equalsIgnoreCase(name)){
+                this.theaterSeats.remove(i);
             }
         }
-        if(initialSize == this.theaterSits.size()){
+        if(initialSize == this.theaterSeats.size()){
             throw new PersonNotFoundException();
         }
     }
     // Return list with all sits
     public List<Seat>getAllSeats(){
-        return this.theaterSits;
+        return this.theaterSeats;
+    }
+
+    public List<Seat>getSeatsByPerson(String name){
+        ArrayList<Seat> seatsByPerson = new ArrayList<Seat>();
+
+        for(int i = 0; i < this.theaterSeats.size(); i++){
+            Seat currSeat = this.theaterSeats.get(i);
+            if(currSeat.getPersonName().equalsIgnoreCase(name)){
+                seatsByPerson.add(currSeat);
+            }
+        }
+        if(seatsByPerson.isEmpty()){
+            throw new PersonNotFoundException();
+        }
+        return seatsByPerson;
     }
 
     // Auxiliary methods

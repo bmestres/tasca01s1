@@ -42,6 +42,27 @@ public class ConsoleUI {
                 switch (menuSel) {
                     case M_SHOW_ALL_BOOKED_SITS: {
                         showBookedSits();
+
+                        break;
+                    }
+                    case M_SHOW_SITS_PER_PERSON: {
+
+                        break;
+                    }
+                    case M_BOOK_SIT: {
+
+                    }
+                    case M_CANCEL_BOOKING: {
+
+                        break;
+                    }
+                    case M_CANCEL_ALL_USER_BOOKING: {
+
+                        break;
+                    }
+                    case M_EXIT: {
+                        exit = true;
+                        break;
                     }
                 }
             }catch(OutOfRangeValueException e){
