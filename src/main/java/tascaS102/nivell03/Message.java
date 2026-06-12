@@ -19,6 +19,10 @@ public class Message {
                *    6) Exit                               *
                *==========================================*
                """;
+    public static final String U_RESERVATION_LIST = """
+            *=========================================*
+                          RESERVATION LIST
+            """;
     // Error messages
     public static final String E_FORMAT_ERROR = "Format error";
     public static final String E_NEGATIVE_VALUE = "Entered value must not be negative";

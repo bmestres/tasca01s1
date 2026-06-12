@@ -63,8 +63,17 @@ public class ConsoleUI {
 
     // Display data methods
     private void showBookedSits(){
-        List<Seat>bookedSits = service.getAllSeats();
 
+        try{
+            List<Seat>bookedSits = service.getAllSeats();
+
+            System.out.println(Message.U_RESERVATION_LIST);
+            for(int i = 0; i < bookedSits.size();i++){
+                System.out.printf("*    %d)  %s                        *\n", i + 1, bookedSits.get(i));
+            }
+        }catch(EmptySeatListException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     private void showSitsPerPerson(){
