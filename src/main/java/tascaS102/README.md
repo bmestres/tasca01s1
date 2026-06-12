@@ -15,3 +15,12 @@ is thrown automatically and safely caught within the test method.
 Finally, the EmptySaleException is modified to inherit from RuntimeException. This turns it in an **unchecked exception** which means 
 that it's not being checked by the compiler in runtime.
 
+## Level 2
+
+### Exercice 1 - Secure keyboard read
+
+This program implements a *ConsoleReader* class that prompts user to input a variaty of data types and returns them after making sure the format is correct.
+It does that through predefined exception *InputMismatchException* and three custom exceptions *MultipleCharacterException*, *ShortStringException* and *YesNoException*.
+
+
+

@@ -38,7 +38,6 @@ public class ConsoleReader {
 
         do{
             System.out.println(Message.ENTER_INT);
-
             try {
                 formatedInt = inputScanner.nextInt();
                 inputScanner.nextLine();
