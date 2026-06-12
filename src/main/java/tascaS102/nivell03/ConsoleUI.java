@@ -9,7 +9,6 @@ public class ConsoleUI {
 
     // Attributes
     private ReservationService service;
-
     // Constructor
     public ConsoleUI(ReservationService service){
         this.service = service;
@@ -17,8 +16,6 @@ public class ConsoleUI {
     // Read integer
     private int readInt(String message){
         int formatedInt = 0;
-
-
         try{
             formatedInt = scannerInput.nextInt();
             scannerInput.nextLine();
@@ -34,36 +31,34 @@ public class ConsoleUI {
 
         do{
             System.out.println(Message.U_MENU_DISPLAY);
-
             try {
                 int userSel = ConsoleReader.readInt(Message.U_OPTION_SELECTION);
 
                 if (userSel < 0 || userSel > 5) {
                     throw new OutOfRangeValueException();
                 }
-
                 MenuOption menuSel = MenuOption.values()[userSel - 1];
 
                 switch (menuSel) {
                     case M_SHOW_ALL_BOOKED_SITS: {
                         showBookedSits();
                     }
-
                 }
             }catch(OutOfRangeValueException e){
                     System.out.println(e.getMessage());
                 }
-
-
-        }while(!exit);
+        } while(!exit);
     }
 
     // Display data methods
     private void showBookedSits(){
+        System.out.println(service.)
 
     }
 
     private void showSitsPerPerson(){
+
+        // String personName = ConsoleReader.
 
     }
 
