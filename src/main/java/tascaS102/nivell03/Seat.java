@@ -27,7 +27,7 @@ public class Seat {
 
         Seat seat = (Seat) o;
 
-        return this.row == seat.row && this.seatNum == seat.seatNum);
+        return this.row == seat.row && this.seatNum == seat.seatNum;
     }
 
     // Shows seat's information
