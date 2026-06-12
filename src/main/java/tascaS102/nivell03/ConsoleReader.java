@@ -3,7 +3,7 @@ package tascaS102.nivell03;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// Check format correctness
+// Ensure correct format inout
 public class ConsoleReader {
     private static Scanner inputScanner = new Scanner(System.in);
 

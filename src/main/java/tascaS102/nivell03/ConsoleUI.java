@@ -52,7 +52,7 @@ public class ConsoleUI {
 
     // Display data methods
     private void showBookedSits(){
-        System.out.println(service.)
+        // System.out.println(service.)
 
     }
 

@@ -16,6 +16,32 @@ public class Seat {
         this.personName = personName;
     }
 
+    // Getters
+    public int getRow(){
+        return this.row;
+    }
+
+    public int getSeatNum(){
+        return this.seatNum;
+    }
+
+    public String getPersonName(){
+        return this.personName;
+    }
+
+    // Setters
+    public void setRow(int row){
+        this.row = row;
+    }
+
+    public void setSeatNum(int seatNum){
+        this.seatNum = seatNum;
+    }
+
+    public void setPersonName(String personName){
+        this.personName = personName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this){

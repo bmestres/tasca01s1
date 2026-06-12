@@ -8,7 +8,7 @@ public class ReservationService {
     // Attributes
     private int rows;
     private int sitsPerRaw;
-    List<Seat> theaterSits;
+    ArrayList<Seat> theaterSits;
 
     // Reservation service constructor
     public ReservationService(int rows, int columns){
@@ -17,14 +17,15 @@ public class ReservationService {
         this.theaterSits = new ArrayList<Seat>();
     }
 
-    // Book a new seat
+
+    // Reserve a new seat
     public void reserveSeat(int row, int seat, String name){
             validateSeatPosition(row, seat);
 
             Seat newSeat = new Seat(row, seat, name);
             this.theaterSits.add(newSeat);
     }
-
+    // Removes reservation given row and seat number
     public void cancelSit(int row, int seat){
         int i = 0;
         boolean deleted = false;
@@ -42,13 +43,30 @@ public class ReservationService {
             throw new SeatAlreadyEmptyException();
         }
     }
+    // Cancel all person's reservations given its name
+    public void cancelAllByPerson(String name){
 
+        int initialSize = this.theaterSits.size();
 
+        for(int i = initialSize - 1 ; i <= 0; i--){
+            if(this.theaterSits.get(i).getPersonName().equals(name)){
+                this.theaterSits.remove(i);
+            }
+        }
+        if(initialSize == this.theaterSits.size()){
+            throw new PersonNotFoundException();
+        }
+    }
+    // Return list with all sits
+    public List<Seat>getAllSeats(){
+        return this.theaterSits;
+    }
 
-    // Checks given sit info is valid
+    // Auxiliary methods
     private void validateSeatPosition(int row, int seat){
         if(row < 1 || row > this.rows || seat < 1 || seat > this.sitsPerRaw){
             throw new InvalidSeatPositionException();
         }
     }
+
 }
