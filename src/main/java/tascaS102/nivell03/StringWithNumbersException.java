@@ -4,5 +4,4 @@ public class StringWithNumbersException extends RuntimeException{
     public StringWithNumbersException(){
         super(Message.E_STRING_WITH_NUMBERS);
     }
-
 }

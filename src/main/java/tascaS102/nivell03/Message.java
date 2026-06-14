@@ -12,6 +12,7 @@ public class Message {
     public static final String U_ENTER_SEAT_NUMBER = "Enter seat number:";
     public static final String U_GOODBYE = "Ending program\nGoodbye!";
 
+    // Menu display
     public static final String U_MENU_DISPLAY = """
                *==========================================*
                *                 MENU                     *

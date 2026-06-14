@@ -1,7 +1,9 @@
 package tascaS102.nivell03;
 
 public class Main {
-
+    /* This program prompts the user to enter rows and sits per row of a cinema room. Then allows to choose
+    * among a set of options that include reserve seats, cancel reservations as well as displaying the state of
+    * reservations on screen */
     static void main(String[] args) {
 
         System.out.println(Message.U_WELCOME);
@@ -12,6 +14,5 @@ public class Main {
         ConsoleUI console = new ConsoleUI(service);
 
         console.start();
-
     }
 }

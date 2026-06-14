@@ -1,5 +1,5 @@
 package tascaS102.nivell03;
-// Enumeration of menu options
+// Enumeration for menu options
 public enum MenuOption {
     M_SHOW_ALL_BOOKED_SITS,
     M_SHOW_SITS_PER_PERSON,

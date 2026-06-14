@@ -21,6 +21,7 @@ public class Seat {
         return this.personName;
     }
 
+    // Returns true if the given seat's row and seat number match with the instance of seat
     @Override
     public boolean equals(Object o) {
         if (o == this){
@@ -33,12 +34,13 @@ public class Seat {
         return this.row == seat.row && this.seatNum == seat.seatNum;
     }
 
-    // Shows seat's information
+    // Shows seat's row, seat number and person in a readable manner
     @Override
     public String toString() {
         return String.format("Row: %d\nSeat: %d\nPerson: %s\n", this.row, this.seatNum, personName);
     }
 
+    // Returns hash code for row and seat number
     @Override
     public int hashCode() {
         return Objects.hash(row, seatNum);

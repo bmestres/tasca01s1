@@ -11,7 +11,9 @@ public class ConsoleUI {
     public ConsoleUI(ReservationService service) {
         this.service = service;
     }
-
+    /* Gets user input and performs the chosen action. Handles out of range inputs as well as
+    wrong format values.
+     */
     public void start() {
         boolean exit = false;
 
@@ -58,7 +60,7 @@ public class ConsoleUI {
         } while (!exit);
     }
 
-    // Display data methods
+    // Shows all booked seats. Handles empty list by showing a No sits found message
     private void showBookedSits() {
         try {
             List<Seat> bookedSits = service.getAllSeats();
@@ -72,7 +74,7 @@ public class ConsoleUI {
             System.out.println(e.getMessage());
         }
     }
-
+    // Shows all reservations from a given person. Handles not found person by showing user a message
     private void showSeatsPerPerson() {
         String person = ConsoleReader.readString(Message.U_ENTER_PERSON);
         try {
@@ -87,7 +89,9 @@ public class ConsoleUI {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Prompt user for seat info to make a reservation.
+    Show message if invalid position or if seat is taken
+     */
     private void promptReserveSeat() {
         int row = ConsoleReader.readInt(Message.U_ENTER_ROW);
         int col = ConsoleReader.readInt(Message.U_ENTER_SEAT_NUMBER);
@@ -100,7 +104,9 @@ public class ConsoleUI {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Prompt user for seat info to make a cancellation.
+    Show message if seat position is out of range or the seat is empty.
+     */
     private void promptCancelSeat() {
         int row = ConsoleReader.readInt(Message.U_ENTER_ROW);
         int col = ConsoleReader.readInt(Message.U_ENTER_SEAT_NUMBER);
@@ -112,7 +118,9 @@ public class ConsoleUI {
             System.out.println(e.getMessage());
         }
     }
-
+    /* Prompt user to enter person's information to cancel all person's reservations.
+    Shows error message if given person is not found
+     */
     private void promptCancelAllByPerson() {
         String person = ConsoleReader.readString(Message.U_ENTER_PERSON);
 

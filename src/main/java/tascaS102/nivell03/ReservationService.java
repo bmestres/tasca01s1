@@ -10,14 +10,14 @@ public class ReservationService {
     private final int sitsPerRaw;
     private final ArrayList<Seat> theaterSeats;
 
-    // Reservation service constructor
+    // Constructor
     public ReservationService(int rows, int columns) {
         this.rows = rows;
         this.sitsPerRaw = columns;
         this.theaterSeats = new ArrayList<>();
     }
 
-    // Reserve a new seat
+    // Adds a new seat to seat's list
     public void reserveSeat(int row, int seat, String name) {
 
         validateSeatPosition(row, seat);
@@ -89,13 +89,14 @@ public class ReservationService {
         return seatsByPerson;
     }
 
-    // Auxiliary validation methods
+    // Ensure user gets an error message if entered row or seat is out of valid range
     private void validateSeatPosition(int row, int seat) {
         if (row < 1 || row > this.rows || seat < 1 || seat > this.sitsPerRaw) {
             throw new InvalidSeatPositionException();
         }
     }
 
+    // Ensure user gets an error message if the given seat is already taken
     private void validateSeatAvailability(int row, int seat) {
         Seat targetSeat = new Seat(row, seat, "");
         int i = 0;

@@ -2,7 +2,7 @@
 
 ## Level 1
 
-### Exercice 1 - Personalized exceptions and error handling
+### Exercise 1 - Personalized exceptions and error handling
 This program implements a *Sale* object that handles shopping lists and computes the total price. Its method *calculateTotal()*
 is designed to throw an *EmptySaleException* if the current products list is empty.
 This represents a business logic error, therefore it is implemented as a **checked exception** and inherits from *Exception* 
@@ -17,10 +17,12 @@ that it's not being checked by the compiler in runtime.
 
 ## Level 2
 
-### Exercice 1 - Secure keyboard read
+### Exercise 1 - Secure keyboard read
 
 This program implements a *ConsoleReader* class that prompts user to input a variaty of data types and returns them after making sure the format is correct.
 It does that through predefined exception *InputMismatchException* and three custom exceptions *MultipleCharacterException*, *ShortStringException* and *YesNoException*.
 
+## Level 3
 
+### Exercise 1 - 
 

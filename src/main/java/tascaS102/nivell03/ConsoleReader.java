@@ -3,11 +3,13 @@ package tascaS102.nivell03;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// Ensure correct format inout
+
 public class ConsoleReader {
     private static final Scanner inputScanner = new Scanner(System.in);
 
-    // Prompt user for integer value and return value if format is correct
+    /* Ensure correct input format for integers. Handles negative values
+    by showing error message
+     */
     public static int readInt(String message) {
         int formatedInt = 0;
         boolean correctFormat = false;
@@ -32,7 +34,9 @@ public class ConsoleReader {
         return formatedInt;
     }
 
-    // Prompt user for a string and return string if format is correct
+    /* Ensure correct input format for strings. Handles strings with numbers
+    by showing a non-allowed message
+     */
     public static String readString(String message){
         String formatedString = "";
         boolean correctFormat = false;
