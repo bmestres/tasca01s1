@@ -24,7 +24,7 @@ It does that through predefined exception *InputMismatchException* and three cus
 
 ## Level 3
 
-### Exercise 1 - 
+### Exercise 1 - Movie theater reservations service
 
 This program manages reservations for a movie theater. It offers the user a set of options that include making or canceling a reservation,
 removing all reservations from a person as well as showing all reservation's info. It uses defensive code to prevent wrong format inputs
